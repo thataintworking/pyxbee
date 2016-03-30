@@ -1,6 +1,6 @@
 from distutils.core import setup
 
-packages=[
+packages = [
     'xbee',
     'xbee.tests',
     'xbee.helpers',
@@ -9,16 +9,16 @@ packages=[
 ]
 
 setup(
-    name='XBee',
-    version='2.2.3',
-    author='Paul Malmsten',
-    author_email='pmalmsten@gmail.com',
+    name='pyxbee',
+    version='0.1',
+    author='Ron Smith',
+    author_email='ron.smith@thataintworking.com',
     packages=packages,
     scripts=[],
-    url='https://github.com/nioinnovation/python-xbee',
+    url='https://github.com/thataintworking/pyxbee',
     license='LICENSE.txt',
-    description='Python tools for working with XBee radios',
+    description='A refactored Python library for XBee communication',
     long_description=open('README.rst').read(),
-    requires=['serial'],
+    requires=['pyserial'],
     provides=packages,
 )

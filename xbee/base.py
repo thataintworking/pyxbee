@@ -14,6 +14,7 @@ series-specific functionality.
 import struct, threading, time
 from xbee.frame import APIFrame
 from xbee.python2to3 import byteToInt, intToByte
+from six import string_types, b
 
 class ThreadQuitException(Exception):
     pass
@@ -211,6 +212,8 @@ class XBeeBase(threading.Thread):
             # Otherwise, the parameter was of variable length, and not
             #  given
             if data:
+                if isinstance(data, string_types):
+                    data = b(data)
                 packet += data
 
         return packet
